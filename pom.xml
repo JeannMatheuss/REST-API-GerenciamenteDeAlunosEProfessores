@@ -48,13 +48,6 @@
             <version>${springdoc.version}</version>
         </dependency>
 
-        <!-- Lombok (opcional) -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <optional>true</optional>
-        </dependency>
-
         <!-- TESTS -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
