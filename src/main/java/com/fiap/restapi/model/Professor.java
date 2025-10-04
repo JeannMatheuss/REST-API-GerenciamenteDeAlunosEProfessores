@@ -9,7 +9,6 @@ public class Professor {
     private String titulacao;
 
     public Professor() {
-        // Construtor vazio para Spring/Jackson
     }
 
     public Professor(Long id, String nome, String departamento, String email, String titulacao) {

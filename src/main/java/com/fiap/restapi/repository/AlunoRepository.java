@@ -25,7 +25,7 @@ public class AlunoRepository {
                 if (rs.next()) {
                     aluno.setId(rs.getLong(1));
                 } else {
-                    // fallback (raro, mas por via das dúvidas)
+                    // fallback
                     try (PreparedStatement ps2 = conn.prepareStatement(
                             "SELECT MAX(ID) FROM ALUNO")) {
                         try (ResultSet r2 = ps2.executeQuery()) {
