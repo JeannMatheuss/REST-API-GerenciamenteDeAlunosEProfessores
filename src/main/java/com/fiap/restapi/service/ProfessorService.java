@@ -13,6 +13,8 @@ public class ProfessorService {
 
     private final ProfessorRepository repo;
 
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+
     public ProfessorService(ProfessorRepository repo) {
         this.repo = repo;
     }
@@ -60,7 +62,7 @@ public class ProfessorService {
         if (nome == null || nome.isBlank()) throw new IllegalArgumentException("Nome é obrigatório");
         if (departamento == null || departamento.isBlank()) throw new IllegalArgumentException("Departamento é obrigatório");
         if (email == null || email.isBlank()) throw new IllegalArgumentException("Email é obrigatório");
-        if (!Pattern.matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$", email)) {
+        if (!EMAIL_PATTERN.matcher(email).matches()) {
             throw new IllegalArgumentException("Email inválido");
         }
         if (titulacao != null && titulacao.length() > 80) {

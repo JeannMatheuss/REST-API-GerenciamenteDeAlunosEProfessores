@@ -1,13 +1,23 @@
 package com.fiap.restapi.model;
 
 public class Professor {
+
     private Long id;
     private String nome;
     private String departamento;
     private String email;
     private String titulacao;
 
-    public Professor(Object o, String trim, String trim1, String trim2, String s) {
+    public Professor() {
+        // Construtor vazio para Spring/Jackson
+    }
+
+    public Professor(Long id, String nome, String departamento, String email, String titulacao) {
+        this.id = id;
+        this.nome = nome;
+        this.departamento = departamento;
+        this.email = email;
+        this.titulacao = titulacao;
     }
 
     public Long getId() {

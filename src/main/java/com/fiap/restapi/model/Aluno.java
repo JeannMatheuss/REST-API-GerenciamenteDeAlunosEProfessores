@@ -5,7 +5,13 @@ public class Aluno {
     private String nome;
     private String curso;
 
-    public Aluno(Object o, String trim, String trim1) {
+    public Aluno() {
+    }
+
+    public Aluno(Long id, String nome, String curso) {
+        this.id = id;
+        this.nome = nome;
+        this.curso = curso;
     }
 
     public Long getId() {

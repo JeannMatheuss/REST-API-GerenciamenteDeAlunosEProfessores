@@ -27,6 +27,7 @@ public class ProfessorRepository {
                 if (rs.next()) {
                     professor.setId(rs.getLong(1));
                 } else {
+                    // fallback raro
                     try (PreparedStatement ps2 = conn.prepareStatement("SELECT MAX(ID) FROM PROFESSOR");
                          ResultSet rs2 = ps2.executeQuery()) {
                         if (rs2.next()) professor.setId(rs2.getLong(1));
